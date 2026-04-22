@@ -9,6 +9,7 @@ contract Vault {
         balances[msg.sender] += msg.value;
     }
 
+       // internal call for state change
     function withdraw(uint256 amount) internal {
         require(balances[msg.sender] >= amount, "Insufficient");
 
