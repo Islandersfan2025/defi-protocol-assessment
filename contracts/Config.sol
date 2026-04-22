@@ -5,6 +5,9 @@ contract Config {
     address public immutable owner;
     uint256 public feeBps;
 
+    // only the owner can change fee
+    modifier OnlyOwner;
+
     constructor() {
         owner = msg.sender;
     }
