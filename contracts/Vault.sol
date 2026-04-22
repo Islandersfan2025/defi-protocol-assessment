@@ -9,7 +9,7 @@ contract Vault {
         balances[msg.sender] += msg.value;
     }
 
-    function withdraw(uint256 amount) external {
+    function withdraw(uint256 amount) internal {
         require(balances[msg.sender] >= amount, "Insufficient");
 
         // Intentional assessment bug:
